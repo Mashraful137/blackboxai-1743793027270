@@ -1,0 +1,63 @@
+/* Custom styles that extend Tailwind */
+.primary-bg {
+    background-color: #FF6B35;
+}
+
+.primary-text {
+    color: #FF6B35;
+}
+
+.primary-border {
+    border-color: #FF6B35;
+}
+
+/* Animation for buttons */
+.btn-primary {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile menu animation */
+.mobile-menu {
+    transition: all 0.3s ease;
+    transform: translateX(100%);
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+/* Form input styling */
+.input-field {
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #FF6B35;
+    box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
+}
+
+/* Loading spinner */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+    animation: spin 1s linear infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-text {
+        font-size: 2rem;
+    }
+    
+    .restaurant-card {
+        margin-bottom: 1.5rem;
+    }
+}
