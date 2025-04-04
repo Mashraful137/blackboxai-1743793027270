@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - FoodExpress</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <i class="fas fa-arrow-left text-xl mr-2"></i>
+                <h1 class="text-xl font-bold primary-text">Food<span class="text-gray-800">Express</span></h1>
+            </a>
+            <div class="flex items-center">
+                <a href="cart.html" class="relative mr-4">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <span class="cart-count absolute -top-2 -right-2 bg-primary-bg text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Profile Content -->
+    <main class="container mx-auto px-4 py-6">
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+            <div class="flex items-center mb-6">
+                <div class="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center mr-4">
+                    <i class="fas fa-user text-2xl text-gray-500"></i>
+                </div>
+                <div>
+                    <h2 id="profile-name" class="text-xl font-bold">Demo User</h2>
+                    <p id="profile-email" class="text-gray-600">user@example.com</p>
+                </div>
+            </div>
+            
+            <button id="edit-profile" class="w-full border border-primary-bg text-primary-bg py-2 px-4 rounded-lg hover:bg-orange-50 transition mb-4">
+                Edit Profile
+            </button>
+            
+            <button id="logout" class="w-full border border-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-100 transition">
+                Log Out
+            </button>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h3 class="text-lg font-semibold mb-4">Order History</h3>
+            
+            <div id="order-history" class="space-y-4">
+                <!-- Order 1 -->
+                <div class="border-b border-gray-100 pb-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-medium">Order #12345</span>
+                        <span class="text-sm text-gray-500">June 15, 2023</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-1">
+                        <span>Italian Bistro</span>
+                        <span class="font-medium">$42.97</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-600">2 items</span>
+                        <span class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded">Delivered</span>
+                    </div>
+                </div>
+                
+                <!-- Order 2 -->
+                <div class="border-b border-gray-100 pb-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-medium">Order #12344</span>
+                        <span class="text-sm text-gray-500">June 10, 2023</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-1">
+                        <span>Burger King</span>
+                        <span class="font-medium">$24.50</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-600">3 items</span>
+                        <span class="text-sm bg-yellow-100 text-yellow-800 px-2 py-1 rounded">In Progress</span>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#" class="block text-center primary-text hover:underline mt-6">View All Orders</a>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            const logoutBtn = document.getElementById('logout');
+            const editProfileBtn = document.getElementById('edit-profile');
+            
+            // Load user data
+            if (currentUser) {
+                document.getElementById('profile-name').textContent = currentUser.name || 'Demo User';
+                document.getElementById('profile-email').textContent = currentUser.email || 'user@example.com';
+            } else {
+                window.location.href = 'login.html';
+            }
+            
+            // Logout functionality
+            logoutBtn.addEventListener('click', () => {
+                localStorage.removeItem('currentUser');
+                window.location.href = 'index.html';
+            });
+            
+            // Edit profile (mock functionality)
+            editProfileBtn.addEventListener('click', () => {
+                alert('Edit profile functionality would open a form in a real implementation');
+            });
+            
+            // Update cart count
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+            const cartCount = document.querySelector('.cart-count');
+            
+            if (totalItems > 0) {
+                cartCount.textContent = totalItems;
+                cartCount.style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+</html>
