@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italian Bistro - FoodExpress</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <i class="fas fa-arrow-left text-xl mr-2"></i>
+                <h1 class="text-xl font-bold primary-text">Food<span class="text-gray-800">Express</span></h1>
+            </a>
+            <div class="flex items-center">
+                <a href="cart.html" class="relative mr-4">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <span class="cart-count absolute -top-2 -right-2 bg-primary-bg text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                </a>
+                <div class="md:hidden">
+                    <i class="fas fa-bars text-xl"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Restaurant Banner -->
+    <section class="relative">
+        <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg" 
+            alt="Italian Bistro" class="w-full h-64 object-cover">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-white">Italian Bistro</h2>
+                <div class="flex items-center mt-2">
+                    <span class="bg-green-100 text-green-800 text-sm px-2 py-1 rounded flex items-center mr-3">
+                        <i class="fas fa-star text-yellow-500 mr-1"></i> 4.5
+                    </span>
+                    <span class="text-white text-sm">Italian • $$ • 1.2 miles</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurant Info -->
+    <section class="container mx-auto px-4 py-6">
+        <div class="bg-white rounded-lg shadow-sm p-4">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-map-marker-alt primary-text mr-2"></i>
+                <p>123 Pasta Street, Downtown</p>
+            </div>
+            <div class="flex items-center mb-4">
+                <i class="fas fa-clock primary-text mr-2"></i>
+                <p>Open today: 11:00 AM - 10:00 PM</p>
+            </div>
+            <div class="flex items-center">
+                <i class="fas fa-info-circle primary-text mr-2"></i>
+                <p>Authentic Italian cuisine with fresh ingredients</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="container mx-auto px-4 pb-16">
+        <h3 class="text-2xl font-bold mb-6">Menu</h3>
+        
+        <!-- Appetizers -->
+        <div class="mb-8">
+            <h4 class="text-xl font-semibold mb-4 border-b pb-2">Appetizers</h4>
+            <div class="space-y-4">
+                <div class="bg-white rounded-lg shadow-sm p-4 flex justify-between items-center">
+                    <div>
+                        <h5 class="font-bold">Bruschetta</h5>
+                        <p class="text-gray-600 text-sm">Toasted bread topped with tomatoes, garlic, and basil</p>
+                        <p class="text-primary-text font-bold mt-1">$8.99</p>
+                    </div>
+                    <button class="add-to-cart bg-primary-bg text-white py-2 px-4 rounded hover:bg-orange-600 transition"
+                        data-id="app1" data-name="Bruschetta" data-price="8.99" data-restaurant="Italian Bistro">
+                        Add
+                    </button>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm p-4 flex justify-between items-center">
+                    <div>
+                        <h5 class="font-bold">Calamari</h5>
+                        <p class="text-gray-600 text-sm">Fried squid served with marinara sauce</p>
+                        <p class="text-primary-text font-bold mt-1">$12.99</p>
+                    </div>
+                    <button class="add-to-cart bg-primary-bg text-white py-2 px-4 rounded hover:bg-orange-600 transition"
+                        data-id="app2" data-name="Calamari" data-price="12.99" data-restaurant="Italian Bistro">
+                        Add
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Courses -->
+        <div class="mb-8">
+            <h4 class="text-xl font-semibold mb-4 border-b pb-2">Main Courses</h4>
+            <div class="space-y-4">
+                <div class="bg-white rounded-lg shadow-sm p-4 flex justify-between items-center">
+                    <div>
+                        <h5 class="font-bold">Spaghetti Carbonara</h5>
+                        <p class="text-gray-600 text-sm">Pasta with eggs, cheese, pancetta, and black pepper</p>
+                        <p class="text-primary-text font-bold mt-1">$16.99</p>
+                    </div>
+                    <button class="add-to-cart bg-primary-bg text-white py-2 px-4 rounded hover:bg-orange-600 transition"
+                        data-id="main1" data-name="Spaghetti Carbonara" data-price="16.99" data-restaurant="Italian Bistro">
+                        Add
+                    </button>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm p-4 flex justify-between items-center">
+                    <div>
+                        <h5 class="font-bold">Chicken Parmesan</h5>
+                        <p class="text-gray-600 text-sm">Breaded chicken topped with marinara and mozzarella</p>
+                        <p class="text-primary-text font-bold mt-1">$18.99</p>
+                    </div>
+                    <button class="add-to-cart bg-primary-bg text-white py-2 px-4 rounded hover:bg-orange-600 transition"
+                        data-id="main2" data-name="Chicken Parmesan" data-price="18.99" data-restaurant="Italian Bistro">
+                        Add
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desserts -->
+        <div>
+            <h4 class="text-xl font-semibold mb-4 border-b pb-2">Desserts</h4>
+            <div class="space-y-4">
+                <div class="bg-white rounded-lg shadow-sm p-4 flex justify-between items-center">
+                    <div>
+                        <h5 class="font-bold">Tiramisu</h5>
+                        <p class="text-gray-600 text-sm">Coffee-flavored Italian dessert</p>
+                        <p class="text-primary-text font-bold mt-1">$7.99</p>
+                    </div>
+                    <button class="add-to-cart bg-primary-bg text-white py-2 px-4 rounded hover:bg-orange-600 transition"
+                        data-id="des1" data-name="Tiramisu" data-price="7.99" data-restaurant="Italian Bistro">
+                        Add
+                    </button>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm p-4 flex justify-between items-center">
+                    <div>
+                        <h5 class="font-bold">Cannoli</h5>
+                        <p class="text-gray-600 text-sm">Sicilian pastry with sweet ricotta filling</p>
+                        <p class="text-primary-text font-bold mt-1">$6.99</p>
+                    </div>
+                    <button class="add-to-cart bg-primary-bg text-white py-2 px-4 rounded hover:bg-orange-600 transition"
+                        data-id="des2" data-name="Cannoli" data-price="6.99" data-restaurant="Italian Bistro">
+                        Add
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
