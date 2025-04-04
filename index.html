@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodExpress - Food Delivery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .primary-bg {
+            background-color: #FF6B35;
+        }
+        .primary-text {
+            color: #FF6B35;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-bold primary-text">Food<span class="text-gray-800">Express</span></h1>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:primary-text">Home</a>
+                <a href="#" class="hover:primary-text">Restaurants</a>
+                <a href="#" class="hover:primary-text">Offers</a>
+                <a href="login.html" class="hover:primary-text">Login</a>
+            </div>
+            <div class="md:hidden">
+                <i class="fas fa-bars text-xl"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="primary-bg text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-4">Craving something delicious?</h2>
+            <p class="text-xl mb-8">Order food from your favorite restaurants near you</p>
+            <div class="max-w-2xl mx-auto relative">
+                <input type="text" placeholder="Search for restaurants or cuisines..." 
+                    class="w-full py-4 px-6 rounded-full shadow-lg focus:outline-none text-gray-800">
+                <button class="absolute right-2 top-2 bg-gray-800 text-white py-2 px-6 rounded-full hover:bg-gray-700">
+                    Search
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Restaurants -->
+    <section class="py-12 container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">Popular Restaurants Near You</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Restaurant Card 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg" 
+                    alt="Restaurant" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-xl font-bold">Italian Bistro</h3>
+                        <span class="bg-green-100 text-green-800 text-sm px-2 py-1 rounded flex items-center">
+                            <i class="fas fa-star text-yellow-500 mr-1"></i> 4.5
+                        </span>
+                    </div>
+                    <p class="text-gray-600 mt-1">Italian • $$ • 1.2 miles</p>
+                    <p class="text-gray-500 mt-2">30-40 min • Free delivery</p>
+                    <a href="restaurant.html" class="mt-4 inline-block primary-bg text-white py-2 px-4 rounded hover:bg-orange-600 transition">
+                        View Menu
+                    </a>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg" 
+                    alt="Restaurant" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-xl font-bold">Burger King</h3>
+                        <span class="bg-green-100 text-green-800 text-sm px-2 py-1 rounded flex items-center">
+                            <i class="fas fa-star text-yellow-500 mr-1"></i> 4.2
+                        </span>
+                    </div>
+                    <p class="text-gray-600 mt-1">American • $ • 0.8 miles</p>
+                    <p class="text-gray-500 mt-2">20-30 min • Free delivery</p>
+                    <a href="restaurant.html" class="mt-4 inline-block primary-bg text-white py-2 px-4 rounded hover:bg-orange-600 transition">
+                        View Menu
+                    </a>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <img src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg" 
+                    alt="Restaurant" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-xl font-bold">Sushi Palace</h3>
+                        <span class="bg-green-100 text-green-800 text-sm px-2 py-1 rounded flex items-center">
+                            <i class="fas fa-star text-yellow-500 mr-1"></i> 4.7
+                        </span>
+                    </div>
+                    <p class="text-gray-600 mt-1">Japanese • $$$ • 1.5 miles</p>
+                    <p class="text-gray-500 mt-2">40-50 min • $2.99 delivery</p>
+                    <a href="restaurant.html" class="mt-4 inline-block primary-bg text-white py-2 px-4 rounded hover:bg-orange-600 transition">
+                        View Menu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">FoodExpress</h3>
+                    <p>Delicious food delivered to your doorstep</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-gray-300">About Us</a></li>
+                        <li><a href="#" class="hover:text-gray-300">Careers</a></li>
+                        <li><a href="#" class="hover:text-gray-300">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Help</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-gray-300">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-gray-300">FAQs</a></li>
+                        <li><a href="#" class="hover:text-gray-300">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-gray-300"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-2xl hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2023 FoodExpress. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
